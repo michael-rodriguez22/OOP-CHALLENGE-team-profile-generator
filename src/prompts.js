@@ -50,6 +50,56 @@ let prompts = {
       when: ({ officeConfirm }) => officeConfirm,
     },
   ],
+  otherEmployees: [
+    {
+      type: "list",
+      name: "role",
+      message: "What is this employees role?",
+      choices: ["Engineer", "Intern"],
+    },
+    {
+      type: "input",
+      name: "name",
+      message: "What is this employees name? (required)",
+      validate: (name) => (name ? true : "Name is required."),
+    },
+    {
+      type: "input",
+      name: "email",
+      message: "What is this employees email address? (required)",
+      validate: (email) => validate.email(email),
+    },
+    {
+      type: "input",
+      name: "id",
+      message:
+        "Please enter an employee ID number for this employee. (required)",
+      validate: (id) => validate.number(id),
+    },
+    {
+      type: "input",
+      name: "github",
+      message: "What is this employee's GitHub username? (required)",
+      validate: (github) => (github ? true : "GitHub username is required."),
+      when: ({ role }) => role === "Engineer",
+    },
+    {
+      type: "input",
+      name: "school",
+      message: "Where did this employee go to school? (required)",
+      validate: (school) => (school ? true : "Name of school is required."),
+      when: ({ role }) => role === "Intern",
+    },
+    {
+      type: "list",
+      name: "nextStep",
+      message: "Do you have another employee to add?",
+      choices: [
+        "Yes, add another employee",
+        "No, complete team and generate profile page.",
+      ],
+    },
+  ],
 };
 
 module.exports = prompts;
