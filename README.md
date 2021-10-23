@@ -45,11 +45,17 @@ dist/                   <!-- rendered output (html), stylesheet -->
   style.css
 
 lib/                    <!-- classes -->
+  Employee.js
+  Engineer.js
+  index.js
+  Intern.js
+  Manager.js
 
 node_modules/           <!-- dependencies -->
 
 src/                    <!-- modular js logic -->
   format-data.js
+  index.js
   page-template.js
   prompts.js
 
