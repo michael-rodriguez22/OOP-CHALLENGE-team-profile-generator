@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+:root {
+  --greem-1: #3a7e68;
+  --greem-2: #77bc92;
+
+  font-family: "Ubuntu Mono", monospace;
+}
+
+html,
+body {
+  background-color: #1c1c1c;
+  color: #ebebeb;
+  overflow-y: scroll;
+}
+
+header {
+  min-height: 10vh;
+  text-align: center;
+  border-bottom: 3px solid var(--greem-2);
+  width: 50%;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 3rem;
+  padding-top: 20px;
+}
+
+main {
+  min-height: 90vh;
+  padding: 50px;
+}
+
+section {
+  border-radius: 10px;
+  padding: 20px;
+  height: 100%;
+  width: 100%;
+  background-color: var(--greem-1);
+}
+
+.container {
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 0 auto;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--greem-2);
+  padding: 30px 50px;
+  border-radius: 10px;
+}
+
+.item:first-child {
+  grid-column: span 2;
+}
+
+.item-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+p {
+  font-size: 1.4rem;
+}
+
+a {
+  color: mediumslateblue;
+}
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+footer a {
+  color: lightsteelblue;
+}
