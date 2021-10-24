@@ -19,33 +19,26 @@ html,
 body {
   background-color: #1c1c1c;
   color: #ebebeb;
-  overflow-y: scroll;
 }
 
 header {
   min-height: 10vh;
   text-align: center;
   border-bottom: 3px solid var(--greem-2);
-  width: 50%;
+  width: 60%;
   margin: 0 auto;
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   padding-top: 20px;
 }
 
 main {
-  min-height: 90vh;
   padding: 50px;
-}
-
-section {
-  border-radius: 10px;
-  padding: 20px;
-  height: 100%;
-  width: 100%;
   background-color: var(--greem-1);
+  margin-top: 50px;
+  overflow-x: auto;
 }
 
 .container {
@@ -94,4 +87,8 @@ footer {
 
 footer a {
   color: lightsteelblue;
+}
+
+h3 {
+  font-size: 1.6rem;
 }

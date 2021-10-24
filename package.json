@@ -7,12 +7,12 @@
     "lib": "lib"
   },
   "scripts": {
-    "start": "node index",
+    "start": "node index.js",
     "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/michael-rodriguez22/temp-team-profile-generator.git"
+    "url": "git+https://github.com/michael-rodriguez22/OOP-CHALLENGE-team-profile-generator.git"
   },
   "keywords": [
     "CLI",
@@ -25,9 +25,9 @@
   "author": "Michael Rodriguez",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/michael-rodriguez22/temp-team-profile-generator/issues"
+    "url": "https://github.com/michael-rodriguez22/OOP-CHALLENGE-team-profile-generator/issues"
   },
-  "homepage": "https://github.com/michael-rodriguez22/temp-team-profile-generator#readme",
+  "homepage": "https://github.com/michael-rodriguez22/OOP-CHALLENGE-team-profile-generator",
   "dependencies": {
     "inquirer": "^8.2.0"
   },

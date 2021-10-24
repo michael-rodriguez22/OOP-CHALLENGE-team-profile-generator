@@ -2,32 +2,11 @@
 
 ## Table of Contents
 
+- [Directory Structure](#Directory-Structure)
 - [Installation & Usage](#Installation-&-Usage)
 - [Demo Video](#Demo-Video)
-- [Directory Structure](#Directory-Structure)
+- [Sample Page](#Sample-Page)
 - [Acceptance Criteria](#Acceptance-Criteria)
-
----
-
-## Installation & Usage
-
-Begin by cloning this repository to your local machine. One you have done that, navigate to the root directory of the project in your terminal and run the following commands:
-
-```
-<!-- install dependencies -->
-
-npm install
-
-<!-- start inquirer prompt flow -->
-
-npm start
-```
-
----
-
-## Demo Video
-
-<a href="" target="_blank">https://www.youtube.com/placeholder</a>
 
 ---
 
@@ -53,6 +32,10 @@ lib/                    <!-- classes -->
 
 node_modules/           <!-- dependencies -->
 
+sample                  <!-- sample html file -->
+  index.html
+  screenshot.png
+
 src/                    <!-- modular js logic -->
   format-data.js
   index.js
@@ -60,11 +43,40 @@ src/                    <!-- modular js logic -->
   prompts.js
 
 .gitignore
+index.js                // entry point & file generation
 package-lock.json
 package.json
+README.md
 
-index.js                // entry point & file generation
 ```
+
+---
+
+## Installation & Usage
+
+You will need to have Node installed on your computer. Begin by cloning this repository to your local machine. Once you have done that, navigate to the root directory of the project in your terminal and run the following commands:
+
+```
+<!-- install dependencies -->
+
+npm install
+
+<!-- start app -->
+
+npm start       <!-- node index will also work -->
+```
+
+---
+
+## Demo Video
+
+<a href="" target="_blank">https://www.youtube.com/placeholder</a>
+
+---
+
+## Sample Page
+
+<img src="./sample/screenshot.png" alt="screenshot of sample page generated with the app">
 
 ---
 

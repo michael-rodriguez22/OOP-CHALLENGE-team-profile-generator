@@ -1,6 +1,6 @@
-const inquirer = require("inquirer");
-const { prompts } = require("./src");
-const { manager } = require("./src/prompts");
+const inquirer = require("inquirer")
+const { prompts, formatData, pageTemplate } = require("./src")
+const fs = require("fs")
 
 function main() {
   // messages to direct user between prompts
@@ -29,32 +29,44 @@ function main() {
         for the index.html file to view your page.            
       ==============================================
         `,
-  };
+  }
 
   // welcome message
-  console.log(messages.welcome);
+  console.log(messages.welcome)
 
   // manager questions
   return inquirer
     .prompt(prompts.manager)
     .then(function otherEmployeesPrompt(managerData) {
       // employee added message
-      console.log(messages.employeeAdded);
+      console.log(messages.employeeAdded)
 
       // make sure there is an array to store data for other employees
-      managerData.otherEmployees ? 0 : (managerData.otherEmployees = []);
+      managerData.otherEmployees ? 0 : (managerData.otherEmployees = [])
 
       // other employee questions (recursive)
-      return inquirer.prompt(prompts.otherEmployees).then((employeeData) => {
-        // add each individual employee to otherEmployees array on managerData
-        managerData.otherEmployees.push(employeeData);
+      return inquirer
+        .prompt(prompts.otherEmployees)
+        .then(employeeData => {
+          // add each individual employee to otherEmployees array on managerData
+          managerData.otherEmployees.push(employeeData)
 
-        // continue?
-        return employeeData.nextStep === "Yes, add another employee"
-          ? otherEmployeesPrompt(managerData)
-          : console.table(managerData);
-      });
-    });
+          // either continue or format answer data into Employee objects
+          return employeeData.nextStep === "Yes, add another employee"
+            ? otherEmployeesPrompt(managerData)
+            : formatData(managerData)
+        })
+        .then(formattedData => {
+          // generate html string
+          const html = pageTemplate(formattedData)
+
+          // use string to write index.html file and send to dist folder!
+          fs.writeFile("./dist/index.html", html, err => {
+            return err ? console.log(err) : console.log(messages.pageGenerated)
+          })
+        })
+        .catch(err => "")
+    })
 }
 
-main();
+main()
